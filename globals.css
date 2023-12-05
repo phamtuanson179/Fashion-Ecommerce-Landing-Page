@@ -1,0 +1,54 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .section__header--dark {
+    @apply text-black-900 font-black text-6xl text-center capitalize font-main
+  }
+
+  .btn {
+    @apply bg-none border-none py-3 px-7
+  }
+
+  .btn--light {
+    @apply rounded border border-black-800 border-solid
+  }
+
+  .btn--dark {
+    @apply bg-black rounded text-white
+  }
+
+  /* .section__header--light {
+    @apply
+  } */
+
+  .description {
+    @apply capitalize text-2xl font-normal text-black-800 font-main
+  }
+
+
+}
